@@ -96,8 +96,11 @@ arrowLeft.addEventListener('click', () => {
 
 
 
+
 const form = document.getElementById("contact-form");
 let isSending = false;
+
+emailjs.init("7DwIkya3x3UZz80fi");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -108,16 +111,18 @@ form.addEventListener("submit", async (e) => {
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const subject = document.getElementById("subject").value.trim();
+    const phone = document.getElementById("phone").value.trim();
     const message = document.getElementById("message").value.trim();
 
     const text =
         `Hello, I am ${name}
-         Email: ${email}
+Email: ${email}
+Phone: ${phone}
 
-         Subject: ${subject}
+Subject: ${subject}
 
-        Message:
-        ${message}`;
+Message:
+${message}`;
 
     const success = document.getElementById("success");
 
@@ -125,28 +130,48 @@ form.addEventListener("submit", async (e) => {
         success.innerText = "Sending...";
         success.style.color = "#aaa";
 
-
-        await fetch("/", {
-            method: "POST",
-            body: new FormData(form)
-        });
-
-
-        window.open(
-            `https://wa.me/261383163240?text=${encodeURIComponent(text)}`,
-            "_blank"
+        await emailjs.send(
+            "service_sya3s57",
+            "template_dl1564g",
+            {
+                name,
+                email,
+                phone,
+                subject,
+                message
+            }
         );
 
 
-        window.open(
-            `mailto:rindrabradley309@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`,
-            "_blank"
+        await emailjs.send(
+            "service_sya3s57",
+            "template_umvhso1",
+
+            {
+                name,
+                email,
+                subject
+            }
         );
 
-        success.innerText = "Message sent ✔";
+
+        success.innerText = "Message sent successfully ✔";
         success.style.color = "#00ff88";
 
         form.reset();
+
+
+        setTimeout(() => {
+            window.open(
+                `https://wa.me/261383163240?text=${encodeURIComponent(text)}`,
+                "_blank"
+            );
+
+            window.open(
+                `mailto:rindrabradley309@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`,
+                "_blank"
+            );
+        }, 400);
 
         setTimeout(() => {
             success.innerText = "";

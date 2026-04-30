@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('7.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.form {
+    background: rgba(64, 64, 64, 0.15);
+    border: 1px solid rgba(255, 255, 255, 3);
+    padding: 10px;
+    border-radius: 16px;
+    backdrop-filter: blur(25px);
+    text-align: center;
+    color: white;
+    width: 400px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.box {
+    margin: 20px 0;
+    position: relative;
+}
+
+.box input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 12px 12px 12px 45px;
+    border-radius: 99px;
+    outline: 3px solid transparent;
+    transition: 0.3s;
+    font-size: 17px;
+    color: wheat;
+    font-weight: 600;
+
+}
+
+.box input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: 17px;
+    font-weight: 500;
+}
+
+.box input:focus {
+    outline: 1px solid transparent;
+    transition: 0.5s;
+}
+
+.box input::-ms-reveal {
+    filter: invert(100%);
+}
+
+.box i {
+    position: absolute;
+    left: 15px;
+    top: 50px;
+    transform: translateY(-50%);
+    font-style: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.forgot {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    font-style: 15px;
+}
+
+.forgot label {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.forgot input {
+    accent-color: white;
+    cursor: pointer;
+}
+
+.forgot a {
+    color: white;
+    text-decoration: none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+.login {
+    width: 100%;
+    padding: 10px 0;
+    background: #2f9cf4;
+    border: none;
+    border-radius: 99px;
+    color: white;
+    font-style: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login:hover {
+    background: #0b87ec;
+}
+
+.register {
+    margin-top: 15px;
+    font-style: 15px;
+
+}
+
+.register a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+
+.register a:hover {
+    text-decoration: underline;
+    color: cornflowerblue;
+}

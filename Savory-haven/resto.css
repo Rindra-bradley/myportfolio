@@ -604,7 +604,9 @@ a {
     }
 
     .home-image {
-        max-width: 250px;
+        justify-content: center;
+        max-width: 200px;
+        width: auto;
 
     }
 
